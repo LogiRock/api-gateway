@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: api-gateway
+  config:
+    import: optional:configserver:${CONFIG_SERVER_URL:http://localhost:8088}
+
+# Valor local por si el config-server no está disponible.
+# Las rutas viven en api-gateway.yml, en el repo de configuración.
+server:
+  port: ${PORT:8066}
